@@ -1,0 +1,85 @@
+----------------------------------
+
+PSEUDOCODE for TicTacToe Using Hand Gesture Recognition:
+
+FUNC index_or_pistol()
+    IF handInTheVideoInput THEN
+        IF hand_figure == index THEN
+            RETURN INDEX
+        ELSE 
+            IF hand_figure == pistol THEN
+                RETURN PISTOL
+            ENDIF
+        ENDIF
+    ELSE
+        RETURN 0
+    ENDIF
+ENDFUNC
+
+FUNC draw_screen() 
+    on each frame adds a 3x3 box in the middle (each box can be either empty, have an O or an X)
+    where the whole grid takes a visible area (loose definition?!)
+
+    then displays each frame
+ENDFUNC
+
+FUNC draw_winner_screen()
+    clean the current screen
+    display Player1 or Player2 won message
+ENDFUNC
+
+
+WHILE gameNotFinished
+    draw_screen()
+    handState = index_or_pistol()
+    IF handState == INDEX
+        IF tipOfIndexFinger is on a tile
+            choose(tile)
+            highlight(tile)
+            draw_screen() 
+        ENDIF
+    ENDIF
+
+    IF pistol
+        IF chosen_tile is free
+            Put X_or_O on the tile
+            draw_screen()
+        ELSE 
+            PASS // Invalid Choice Warning Could be made
+        ENDIF
+    ENDIF
+
+    IF Winner
+        draw_winner_screen(Winner)
+        EXIT
+    ENDIF
+ENDWHILE
+
+
+----------------------------------
+
+
+LOG
+Written on April 13: 
+    about a month ago I had written TicTacToe cli based game (again for the third time)
+    with the intention of making a new version of it
+    Days Of Procrastination
+
+    the pseudocode was written today
+
+    // a video from pedropAI (formerly known to me as Rocket Data Science) youtube channel that helped me:
+    // https://www.youtube.com/watch?v=QekxFU0YDqM&list=PLLjn4BxzcNKtUwWeHsGyAkhfRHU32trL5
+
+April 14: 
+    Writing on April 14th, a small contribution was made
+April 15th:
+    hand Recognition part is done, was not easy spent about 3 hours, now can display the grid and show tile that is being chosen_tile
+
+    what needs to be done: make the pistol part work and add the game functionality
+
+Aril 17:
+    I could finish the project there is a little bug because I am using a while loop
+
+April 18:
+    Not the while loop, the issue was using pop incorrectly, QK helped me solve it. Now the project is functional
+    
