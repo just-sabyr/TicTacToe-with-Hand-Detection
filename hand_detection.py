@@ -35,6 +35,8 @@ hands = mp_hands.Hands(static_image_mode=False, max_num_hands=1,
                     min_detection_confidence=.7, min_tracking_confidence=.5)
 
 mp_drawing = mp.solutions.drawing_utils
+
+print("The Game Begins\n\n\n\n\n")
 while True:
 
     chosen = -1 
@@ -72,6 +74,7 @@ while True:
             is_hand_pistol = (
                 index_finger_tip.y < thumb_tip.y and
                 middle_finger_tip.y < thumb_tip.y and
+                abs(middle_finger_tip.y - index_finger_tip.y) < 30 and
                 ring_finger_tip.y > thumb_tip.y and
                 pinky_tip.y > thumb_tip.y
             )
@@ -127,7 +130,8 @@ while True:
         winner = game_winner(board)
          
         if winner != 0:
-            print(f"{current_player} has won")
+            blue_or_red = 'blue' if current_player == 'x' else 'red'
+            print(f"{blue_or_red} has won")
             break
         
         current_player = next_player(current_player)
