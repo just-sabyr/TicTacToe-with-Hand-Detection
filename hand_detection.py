@@ -24,10 +24,7 @@ def next_player(current_player):
     return ('x' if current_player == 'o' else 'o')
 
 import cv2
-import pyautogui
 import mediapipe as mp
-import time
-import numpy as np
 
 cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FPS, 10)
@@ -44,9 +41,13 @@ while True:
     ret, frame = cap.read()
     if not ret:
         break
-    
-    frame = cv2.resize(frame, (SCREEN_WIDTH, SCREEN_HEIGHT))
 
+    # flip the screen horizontally
+    frame = cv2.flip(frame, 1)
+
+    # resize the screen to make it more visible
+    frame = cv2.resize(frame, (SCREEN_WIDTH, SCREEN_HEIGHT))
+    
     image_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
     results = hands.process(image_rgb)
