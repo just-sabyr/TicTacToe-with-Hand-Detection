@@ -25,6 +25,7 @@ def next_player(current_player):
 
 import cv2
 import mediapipe as mp
+import time
 
 cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_FPS, 10)
@@ -37,7 +38,7 @@ hands = mp_hands.Hands(static_image_mode=False, max_num_hands=1,
 mp_drawing = mp.solutions.drawing_utils
 
 print("The Game Begins\n\n\n\n\n")
-while True:
+while free_tiles:
 
     chosen = -1 
     ret, frame = cap.read()
@@ -155,3 +156,8 @@ while True:
         break
 
 cap.release()
+
+# after the game has ended  
+# show the game results
+cv2.imshow('frame', frame)
+
