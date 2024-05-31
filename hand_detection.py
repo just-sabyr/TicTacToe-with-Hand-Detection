@@ -161,18 +161,19 @@ while continue_playing:
             break
 
 
-    # change the screen from the game and display the winner or draw images
-    if tile:
+    # change the screen from the game and display the winner or draw (tie) images
+    if free_tiles:
         winner_or_tie_img_path = 'blue_won.png' if blue_or_red == 'blue' else 'red_won.png'
     else:
         winner_or_tie_img_path = 'tie.png'
     winner_or_tie_img = cv2.imread(winner_or_tie_img_path)
 
-    for _ in range(150): 
+    for _ in range(200): 
         cv2.imshow('blended', winner_or_tie_img)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             continue_playing = False
             break
+
 
     cv2.destroyWindow('blended')
     cap.release()
