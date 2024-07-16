@@ -28,7 +28,7 @@ This project is a tictactoe game with hand detection.
     ```
 2. Create a virtual environment and activate it:
     ```bash
-    python -m venv .venv
+    python3 -m venv .venv
     source .venv/bin/activate # on windows, use `.venv\Scripts\activate`
     ```
 3. Install the required packages:
