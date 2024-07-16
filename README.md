@@ -39,11 +39,11 @@ This project is a tictactoe game with hand detection.
 ## Running the project
 
 With Hand Detection:
-    ```bash
-    python hand_detection.py
-    ```
+```bash
+python hand_detection.py
+```
     
 Only Command Line game:
-    ```bash
-    python cli_game.py
-    ```
+```bash
+python cli_game.py
+```
