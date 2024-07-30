@@ -4,7 +4,7 @@ This project is a tictactoe game with hand detection.
 
 ## Demo Video
 
-[![Watch the video](https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=cPGkEDbw9gU)
+[![Watch the video](https://img.youtube.com/vi/[https://www.youtube.com/watch?v=cPGkEDbw9gU/maxresdefault.jpg)](https://www.youtube.com/watch?v=cPGkEDbw9gU)
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=cPGkEDbw9gU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Project Structure
